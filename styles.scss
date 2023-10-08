@@ -1,0 +1,134 @@
+$pry-color: #FFD166;
+$black: #1B263B;
+$inputBG: #FAFAFA;
+$stroke: #F1F1F1;
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans';
+    color: $black;
+    transition: 0.5s ease;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+    h1{
+        font-size: 3rem;
+        color: $black;
+    }
+}
+main{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+#main-container{
+    min-width: 35vw;
+    border: solid 1px $stroke;
+    padding: 2rem 2rem;
+    border-radius: 5px;
+    height: 70%;
+    position: absolute;
+    overflow:auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3{
+        margin-bottom: 2rem;
+    }
+
+    .item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 0.5rem;
+
+        background-color: $inputBG;
+        padding: 15px;
+        border: $stroke;
+        border-radius: 10px;
+
+        overflow: hidden;
+
+        li{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            list-style: none;
+        }
+
+        #delBtn:hover path{
+            fill: rgba(237, 38, 38, 0.989);
+        }
+    }
+
+    #input{
+        padding: 15px;
+        border-radius: 10px;
+        background-color: $inputBG;
+        border: solid 1px $stroke;
+        width:100%;
+    }
+    #btn-section{
+        display: flex;
+        gap: 12px;
+    }
+    #addBtn{
+        padding: 15px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        border: none;
+        background-color: $pry-color;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #addBtn:hover{
+        background-color: #eabb4d;
+    }
+
+    svg{
+        fill: white;
+        transform: translateX(100px);
+    }
+    .item:hover svg{
+        transform: translateX(0);
+        fill: red;
+        cursor: pointer;
+    }
+}
+
+#main-container::-webkit-scrollbar{
+    width: 5px;
+}
+
+#itemContainer{
+    flex-direction: column;
+    height: 300px;
+    overflow-y: scroll;
+}
+#itemContainer::-webkit-scrollbar{
+    width: 5px;
+}
+#itemContainer::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+#itemContainer::-webkit-scrollbar-thumb{
+    background-color: $stroke;
+    border-radius: 20px;
+}
